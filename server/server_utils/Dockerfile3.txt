@@ -1,0 +1,21 @@
+FROM library/ubuntu:14.04
+
+RUN \
+  apt-get update && \
+  apt-get install -y openjdk-7-jdk && \
+  rm -rf /var/lib/apt/lists/*
+  
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+
+RUN cd /home && \
+mkdir doenota && \
+cd doenota && \
+mkdir javakey
+  
+ADD turnoff/TurnOffVM.jar /home/doenota/TurnOffVM.jar
+ADD turnoff/lib /home/doenota/lib
+ADD WindowsAzureKeyStore.jks /home/doenota/javakey/WindowsAzureKeyStore.jks
+
+WORKDIR /home/doenota/
+
+CMD java -jar TurnOffVM.jar

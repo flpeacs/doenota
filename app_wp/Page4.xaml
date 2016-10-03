@@ -1,0 +1,38 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="NotaFiscal.Page4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="#BDA2C1">
+
+    <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+        <Grid Background="#BDA2C1" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="480">
+            <Button Padding="-15" BorderBrush="Transparent" Margin="10,14,431,19" Click="Home_Clicked">
+                <Image Source="Assets/home.png" Stretch="Fill" Width="39"/>
+            </Button>
+            <Image Source="Assets/logo_nota.png" Stretch="Fill" Margin="115,0,132,0"/>
+            <Button Padding="-15" BorderBrush="Transparent" Margin="425,0,0,0" Click="Ask_Clicked">
+                <Image Source="Assets/questions.png" Height="35" Width="22"/>
+            </Button>
+        </Grid>
+        <Grid Background="White" HorizontalAlignment="Left" Height="758" Margin="0,65,0,-55" VerticalAlignment="Top" Width="480">
+            <Image HorizontalAlignment="Center" Height="241" VerticalAlignment="Top" Width="257" Source="Assets/Notinha.png" Margin="112,68,111,0"/>
+            <TextBlock FontSize="30" Foreground="Black" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" HorizontalAlignment="Center" Height="78" Margin="0,307,0,0" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.LastPageCongratulations, Source={StaticResource LocalizedStrings}}" TextAlignment="Center" VerticalAlignment="Top" Width="480"/>
+            <TextBlock FontSize="30" Foreground="Black" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" HorizontalAlignment="Left" Height="40" Margin="0,469,0,0" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.LastPageThanks, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="480" TextAlignment="Center"/>
+            <TextBlock x:Name="institution" FontSize="30" Foreground="Black" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" HorizontalAlignment="Left" Height="36" Margin="-1,404,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="480" TextAlignment="Center"/>
+            <Button BorderThickness="0" Padding="-3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,1,101" Click="DonateAgain_Clicked" Width="479" >
+                <Image HorizontalAlignment="Center" Height="100" Width="61" Source="Assets/continue.png"/>
+            </Button>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

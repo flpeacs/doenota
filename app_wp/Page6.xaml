@@ -1,0 +1,60 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="NotaFiscal.Page6"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="#BDA2C1">
+
+    <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="425*"/>
+            <ColumnDefinition Width="51*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#BDA2C1" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="480" Grid.ColumnSpan="3">
+            <Button Padding="-15" BorderBrush="Transparent" Margin="10,14,431,19" Click="Home_Clicked">
+                <Image Source="Assets/home.png" Stretch="Fill" Width="39"/>
+            </Button>
+            <Image Source="Assets/logo_nota.png" Stretch="Fill" Margin="115,0,132,0"/>
+            <Button Padding="-15" BorderBrush="Transparent" Margin="425,0,0,0" Click="Ask_Clicked">
+                <Image Source="Assets/questions.png" Height="35" Width="22"/>
+            </Button>
+        </Grid>
+        <Grid Background="White" HorizontalAlignment="Left" Height="755" Margin="0,66,0,-53" VerticalAlignment="Top" Width="480" Grid.ColumnSpan="3">
+            <Button BorderThickness="0" FontSize="30" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" HorizontalContentAlignment="Left" Foreground="Black" Content="{Binding LocalizedResources.ConfigurationPageSelect, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="480" Height="75"  Click="Institution_Clicked"/>
+            <Grid Height="75" Margin="0,73,0,607">
+                <TextBlock  FontSize="30" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" Foreground="Black" Text="{Binding LocalizedResources.ConfigurationPage3g, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Width="391" Margin="24,21,0,21"/>
+            </Grid>
+            <Border BorderBrush="#BDA2C1" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="0,147,0,0" VerticalAlignment="Top" Width="480"/>
+            <CheckBox BorderThickness="0" x:Name="check" Background="#BDA2C1" Foreground="Black" HorizontalAlignment="Left" Margin="414,77,-2,0" VerticalAlignment="Top"/>
+            <Grid Height="100" Margin="0,150,0,505">
+                <TextBlock FontSize="30" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" Foreground="Black" Text="{Binding LocalizedResources.ConfigurationPageHide, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Width="391" Margin="24,13,0,12"/>
+                <CheckBox BorderThickness="0" x:Name="check2" Background="#BDA2C1" Foreground="Black" HorizontalAlignment="Left" Margin="414,16,-2,0" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Height="75" Margin="0,252,0,428">
+                <TextBlock  FontSize="30" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" Foreground="Black" Text="{Binding LocalizedResources.ConfigurationPageVersion, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Width="391" Margin="24,21,0,21"/>
+            </Grid>
+            <Border BorderBrush="#BDA2C1" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="0,326,0,0" VerticalAlignment="Top" Width="480"/>
+            <Border BorderBrush="#BDA2C1" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="-2,402,0,0" VerticalAlignment="Top" Width="480"/>
+
+        </Grid>
+        <Border BorderBrush="#BDA2C1" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="0,138,0,0" VerticalAlignment="Top" Width="480" Grid.ColumnSpan="3"/>
+        <Border BorderBrush="#BDA2C1" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="0,316,0,0" VerticalAlignment="Top" Width="480" Grid.ColumnSpan="3"/>
+        <Grid Margin="0,394,0,299" Grid.ColumnSpan="3">
+            <TextBlock  FontSize="30" FontFamily="Assets/Fonts/roboto_fonts/Roboto-Thin.ttf#Roboto" Foreground="Black" Text="{Binding LocalizedResources.ConfigurationPageSupport, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Width="456" Margin="24,18,0,18"/>
+        </Grid>
+
+    </Grid>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+
+</phone:PhoneApplicationPage>

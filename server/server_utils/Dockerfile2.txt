@@ -1,0 +1,27 @@
+FROM library/ubuntu:14.04
+
+RUN apt-get update && \
+apt-get -y install build-essential gcc g++  && \
+apt-get -y install tesseract-ocr && \
+apt-get -y install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev && \
+apt-get -y install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev && \
+git clone https://github.com/Itseez/opencv.git 
+
+RUN apt-get -y install unixodbc-dev unixodbc-bin unixodbc && \
+cd opencv && \
+mkdir build && \
+cd build && \
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..  && \
+make && \
+sudo make install && \
+sudo ldconfig && \
+apt-get -y install libboost-all-dev && \
+apt-get -y install python cython python-scipy python-pip && \
+pip install --upgrade pip && \
+pip install --upgrade virtualenv && \
+pip install https://pyodbc.googlecode.com/files/pyodbc-3.0.7.zip
+
+WORKDIR /home/doenota/
+
+ADD ./doenota/ /home/doenota/
+RUN python main.py

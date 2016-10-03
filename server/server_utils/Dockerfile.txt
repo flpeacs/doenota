@@ -1,0 +1,31 @@
+FROM library/ubuntu:14.04
+
+RUN apt-get update && \
+apt-get -y install build-essential wget chrpath libssl-dev libxft-dev && \
+apt-get -y install libfreetype6 libfreetype6-dev && \
+sudo apt-get -y install libfontconfig1 libfontconfig1-dev && \
+cd ~ && \
+export PHANTOM_JS="phantomjs-1.9.8-linux-x86_64" && \
+wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2 && \
+tar xvjf $PHANTOM_JS.tar.bz2 && \
+mv $PHANTOM_JS /usr/local/share && \
+ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin && \
+phantomjs --version
+
+RUN \
+  apt-get update && \
+  apt-get install -y openjdk-7-jdk && \
+  rm -rf /var/lib/apt/lists/*
+  
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+
+RUN cd /home && \
+mkdir doenota && \
+cd doenota
+  
+ADD NotaFiscalSelenium.jar /home/doenota/NotaFiscalSelenium.jar
+ADD lib /home/doenota/lib
+
+WORKDIR /home/doenota/
+
+CMD java -jar NotaFiscalSelenium.jar

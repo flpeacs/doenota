@@ -1,0 +1,38 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="NotaFiscal.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="#BDA2C1">
+
+    <Grid HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+        <Grid Background="#BDA2C1" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="480">
+            <Button Padding="-15" BorderBrush="Transparent" Margin="10,14,431,19" Click="Home_Clicked">
+                <Image Source="Assets/home.png" Stretch="Fill" Width="39"/>
+            </Button>
+            <Image Source="Assets/logo_nota.png" Stretch="Fill" Margin="115,0,132,0"/>
+            <Button Padding="-15" BorderBrush="Transparent" Margin="425,0,0,0" Click="Ask_Clicked">
+                <Image Source="Assets/questions.png" Height="35" Width="22"/>
+            </Button>
+        </Grid>
+
+        <Image x:Name="goodPhoto" HorizontalAlignment="Left" Height="645" VerticalAlignment="Top" Width="480" Stretch="Fill" Margin="0,66,0,0"/>
+        <Grid x:Name="panelBottom" Background="#F9F9F9" HorizontalAlignment="Left" Height="111" Margin="0,0,0,-54" VerticalAlignment="Bottom" Width="480">
+            <Button Padding="-10" Click="Config_Clicked" Margin="10,0,417,0" Height="56" VerticalAlignment="Top">
+                <Image Source="Assets/config.png" Height="46" Width="46" />
+            </Button>
+        </Grid>
+        <Button x:Name="photoButton" Background="#BDA2C1" Padding="-15" Margin="200,0" Height="70" Click="Send_Clicked" Width="80" BorderBrush="Transparent" VerticalAlignment="Bottom" >
+            <Image Source="Assets/up.png" Stretch="Fill"/>
+        </Button>
+    </Grid>
+</phone:PhoneApplicationPage>
